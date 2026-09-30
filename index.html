@@ -4,11 +4,24 @@
     <title>AI FastAPI Project</title>
 </head>
 <body>
+
     <h1>AI FastAPI Project</h1>
 
-    <form>
-        <input type="text" placeholder="Ask something..." />
+    <form action="/ask" method="post">
+        <input
+            type="text"
+            name="question"
+            placeholder="Ask something..."
+            required
+        />
+
         <button type="submit">Ask AI</button>
     </form>
+
+    {% if answer %}
+        <h2>Response:</h2>
+        <p>{{ answer }}</p>
+    {% endif %}
+
 </body>
 </html>
